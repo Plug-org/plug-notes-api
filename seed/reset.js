@@ -3,11 +3,11 @@ const fs = require('fs');
 const path = require('path');
 
 const DB_FILE = './notes.db';
-
 const db = new Database(DB_FILE);
 
-async function seedDb () {
+async function resetDb () {
   try{
+    db.prepare('DELETE FROM notes').run();
     const filePath = path.join(__dirname, "/seed_data.json")
     const seedData = JSON.parse(fs.readFileSync(filePath, 'utf-8'));
     const insert = db.prepare('INSERT INTO notes (title, content) VALUES (?, ?)');
@@ -17,10 +17,8 @@ async function seedDb () {
     insertMany(seedData);
     console.log({ success: true });
   }catch{
-    console.error({ error:"Failed to seed data" })
+    console.error({ error: "Failed to reset data" })
   }
 };
 
-seedDb();
-
-module.exports ={ seedDb }
+resetDb();
