@@ -3,7 +3,6 @@ const fs = require('fs');
 const path = require('path');
 
 const DB_FILE = './notes.db';
-
 const db = new Database(DB_FILE);
 
 async function seedDb () {
@@ -15,7 +14,7 @@ async function seedDb () {
       for (const note of notes) insert.run(note.title, note.content);
     });
     insertMany(seedData);
-    console.log({ success: true });
+    console.log({ success: "Succesfully seeded database." });
   }catch{
     console.error({ error:"Failed to seed data" })
   }
