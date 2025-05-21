@@ -1,12 +1,13 @@
 # Plug Notes API
 
-A beginner-friendly REST API for practicing frontend development with a real backend. Built with Express and SQLite. No auth, just clean CRUD.
+A beginner-friendly REST API for practicing frontend development with a "real" backend. Built with Express and SQLite. No auth to keep things simple for this easy level API.
 
 ## Features
 
 - Full CRUD on `/notes`
 - Persistent local SQLite storage
-- Seed/reset endpoint to restore initial data
+- initial data already seeded
+- reset endpoint to restore initial data 
 - CORS-enabled and JSON-ready
 
 ## Setup
@@ -14,7 +15,7 @@ A beginner-friendly REST API for practicing frontend development with a real bac
 1. **Clone the repo**
 
 ```bash
-git clone https://github.com/yourusername/plug-notes-api.git
+git clone git@github.com:Plug-org/plug-notes-api.git
 cd plug-notes-api
 ```
 
@@ -27,10 +28,10 @@ npm install
 3. **Run the API**
 
 ```bash
-node index.js
+npm run dev
 ```
 
-The server will start at [http://localhost:3000](http://localhost:3000).
+The server will start at [http://localhost:5000](http://localhost:5000).
 
 ## Endpoints
 
@@ -75,23 +76,28 @@ DELETE /notes/:id
 ```http
 POST /reset
 ```
-> Loads sample notes from `seed_data.json` and replaces the database content.
+> If you ever want to start from scratch this will erase the data in the database and then loads sample notes from `seed_data.json`.
 
 ## File Structure
 
 ```
 plug-notes-api/
-├── index.js            # Main server
-├── notes.db            # Local SQLite DB (auto-created)
-├── seed_data.json      # Seed data for reset
-├── package.json        # Project metadata
-└── README.md           # This file
+├── app.js                   # Main server
+├── notes.db                 # Local SQLite DB (auto-created)
+├── notes.db-shm             # Local SQLite DB (auto-created)
+├── notes.db-wal             # Local SQLite DB (auto-created)
+├── package.json             # Project metadata
+└── README.md                # This file
+├──seed/
+      ├── seed_data.json     # initial data 
+      ├── seed.js            # script to seed initial data
 ```
 
 ## Who is this for?
 - Frontend devs learning how to interact with APIs
 - Bootcamp students and self-taught devs
-- Anyone who wants clean, working backends to plug into their UI projects
+
+This is a very basic CRUD app to get started with.
 
 ## License
 MIT
