@@ -1,0 +1,10 @@
+[
+  {
+    "title": "Welcome Note",
+    "content": "This is a sample note to get started. Feel free to add, edit, or delete."
+  },
+  {
+    "title": "Next Steps",
+    "content": "Try connecting this API to a frontend like React or Vue!"
+  }
+]
