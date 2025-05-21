@@ -30,7 +30,10 @@ npm install
 ```bash
 npm run dev
 ```
-
+4. **Seed the database**
+```bash
+npm run seed
+```
 The server will start at [http://localhost:5000](http://localhost:5000).
 
 ## Endpoints
