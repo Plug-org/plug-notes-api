@@ -15,7 +15,7 @@ A beginner-friendly REST API for practicing frontend development with a "real" b
 1. **Clone the repo**
 
 ```bash
-git clone git@github.com:Plug-org/plug-notes-api.git
+git clone https://github.com/Plug-org/plug-notes-api.git
 cd plug-notes-api
 ```
 
@@ -66,7 +66,6 @@ GET /notes/:id
 ```
 response
 ```json
-// hitting /notes/2
 {
     "id": 2,
     "title": "Next Steps",
@@ -109,7 +108,6 @@ Content-Type: application/json
 ```
 successful response
 ```json
-// hitting http://localhost:5000/notes/1
 {
     "id": 1,
     "title": "Updated Title",
@@ -125,7 +123,6 @@ DELETE /notes/:id
 ```
 succesful response
 ```json
-// hitting http://localhost:5000/notes/1
 {
     "success": true
 }
